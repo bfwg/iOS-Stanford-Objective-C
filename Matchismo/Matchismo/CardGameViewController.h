@@ -10,6 +10,7 @@
 
 @interface CardGameViewController : UIViewController
 
+@property (nonatomic) NSUInteger cardsToMatch;
 
 @end
 

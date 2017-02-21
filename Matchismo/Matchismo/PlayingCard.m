@@ -6,6 +6,7 @@
 //  Copyright © 2017 Fan Jin. All rights reserved.
 //
 
+#include <math.h>
 #import "PlayingCard.h"
 
 @implementation PlayingCard
@@ -13,7 +14,7 @@
 @synthesize suit = _suit;
 
 + (NSArray *)validSuit {
-    return @[@"♥︎",@"◆",@"♠",@"♣︎"];
+    return @[@"❤️",@"♦️",@"♠️",@"♣️"];
 }
 
 + (NSArray *)rankStrings {
@@ -22,6 +23,42 @@
 
 + (NSUInteger)maxRank {
     return [[PlayingCard rankStrings] count] - 1;
+}
+
+- (int)match:(NSArray *)otherCards {
+    NSInteger score = 0;
+    BOOL loopDone = NO;
+    for (PlayingCard *card in otherCards) {
+        if (self.rank == card.rank) {
+            score += 4;
+        } else if ([self.suit isEqualToString:card.suit]) {
+            score += 1;
+        } else {
+            score = 0;
+            break;
+        }
+        NSUInteger index = [otherCards indexOfObject:card];
+        for (NSInteger j = index; j < [otherCards count]; j++) {
+            if (j == [otherCards count] - 1) {
+                break;
+            } else {
+                PlayingCard *otherCard = otherCards[j + 1];
+                if (card.rank == otherCard.rank) {
+                    score += 4;
+                } else if ([card.suit isEqualToString:otherCard.suit]) {
+                    score += 1;
+                } else {
+                    score = 0;
+                    loopDone = YES;
+                    break;
+                }
+            }
+        }
+        if (loopDone) {
+            break;
+        }
+    }
+    return pow(score, [otherCards count]);
 }
 
 - (NSString *)contents {
