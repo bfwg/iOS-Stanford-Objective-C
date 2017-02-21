@@ -1,10 +1,9 @@
 ## Matchismo
 Source code solution for game Matchismo
 
-
-
-
-
+<img width="30%" alt="screen shot 2017-02-21 at 11 41 47 am" src="https://cloud.githubusercontent.com/assets/12819525/23181770/1df4320a-f82b-11e6-9001-5108fe8e8859.png">
+<img width="30%" alt="screen shot 2017-02-21 at 11 41 54 am" src="https://cloud.githubusercontent.com/assets/12819525/23181771/1e0b21cc-f82b-11e6-948c-3bb7127df3d1.png">
+<img width="30%" alt="screen shot 2017-02-21 at 11 42 20 am" src="https://cloud.githubusercontent.com/assets/12819525/23181772/1e2701da-f82b-11e6-8604-feecfe19fee1.png">
 
 ## Couse Materials
 
